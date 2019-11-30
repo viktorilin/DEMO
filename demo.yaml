@@ -1,1 +1,2 @@
-gitBranch : https://github.com/viktorilin/DEMO.git
+nugetStore: E:/SS/nuget.exe
+solution: DEMO.sln

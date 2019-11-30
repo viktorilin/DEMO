@@ -1,3 +1,4 @@
+def datas
 pipeline {
     agent any
     stages {
@@ -6,9 +7,16 @@ pipeline {
             git branch: 'master', url: 'https://github.com/viktorilin/DEMO.git'
             }
         }
+        stage('Initialize the variables') {
+            steps{
+                script{
+                    datas = readYaml file: 'demo.yaml'
+                }
+            }  
+        }
         stage('Restore Nuget'){
             steps{
-            bat 'E:/SS/nuget.exe restore DEMO.sln'
+            bat '${datas.nugetStore} restore DEMO.sln'
             }
         }
         stage('build'){
@@ -19,7 +27,6 @@ pipeline {
         stage('Execute All Tests'){
             steps{
                 echo "${env.WORKSPACE}"
-                
                 bat "\"${env.WORKSPACE}\\packages\\NUnit.ConsoleRunner.3.10.0\\tools\\nunit3-console.exe\"  DEMO/bin/Debug/DEMO.dll"
                 
             }
@@ -31,4 +38,6 @@ pipeline {
         }
     }
 }
+
+
 
