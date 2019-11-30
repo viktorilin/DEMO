@@ -1,4 +1,6 @@
-def datas
+node{
+    def datas = readYaml file: 'demo.yaml'
+}
 pipeline {
     agent any
     stages {
@@ -7,16 +9,10 @@ pipeline {
             git branch: 'master', url: 'https://github.com/viktorilin/DEMO.git'
             }
         }
-        stage('Initialize the variables') {
-            steps{
-                script{
-                    datas = readYaml file: 'demo.yaml'
-                }
-            }  
-        }
+        
         stage('Restore Nuget'){
             steps{
-            bat '"${datas.nugetStore}" restore "${datas.solution}"'
+            bat "${datas.nugetStore} restore ${datas.solution}"
             }
         }
         stage('build'){
