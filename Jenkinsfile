@@ -27,7 +27,7 @@ pipeline {
         stage('Execute All Tests'){
             steps{
                 echo "${env.WORKSPACE}"
-                bat "\"${env.WORKSPACE}${datas.nunitPath}\"  ${testDllPath}"
+                bat "\"${env.WORKSPACE}${datas.nunitPath}\"  ${datas.testDllPath}"
                 
             }
         }
@@ -38,6 +38,3 @@ pipeline {
         }
     }
 }
-
-
-
