@@ -18,15 +18,15 @@ namespace DEMO
         [TearDown]
         public void TeardownTest()
         {
-            try
-            {
+            //try
+            //{
                 driver.Quit();
                 Request.req();
-            }
-            catch (Exception e)
-            {
-                // Ignore errors if unable to close the browser
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    // Ignore errors if unable to close the browser
+            //}
         }
         [Test, Property("Requirement", "CALC-1")]
         public void GoogleTest()
