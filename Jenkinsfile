@@ -21,20 +21,20 @@ pipeline {
         }
         stage('build'){
             steps{
-            bat "\"${tool 'MSBuildLocal'}\" DEMO.sln /p:Configuration=Debug /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+            bat "\"${tool 'MSBuildLocal'}\" ${datas.solution} /p:Configuration=Debug /p:Platform=\"Any CPU\" /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
             }
         }
         stage('Execute All Tests'){
             steps{
                 echo "${env.WORKSPACE}"
-                bat "\"${env.WORKSPACE}\\packages\\NUnit.ConsoleRunner.3.10.0\\tools\\nunit3-console.exe\"  DEMO/bin/Debug/DEMO.dll"
+                bat "\"${env.WORKSPACE}${datas.nunitPath}\"  ${testDllPath}"
                 
             }
         }
     }
     post { 
         always { 
-            bat '"API/bin/Debug/API.exe"'
+            bat "${datas.postActionPath}"
         }
     }
 }
