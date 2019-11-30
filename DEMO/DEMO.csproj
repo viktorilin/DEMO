@@ -55,7 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Request.cs" />
+    <Compile Include="Calculator.cs" />
+    <Compile Include="CalculatorTests.cs" />
     <Compile Include="WdriverTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

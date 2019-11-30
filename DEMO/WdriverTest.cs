@@ -28,7 +28,7 @@ namespace DEMO
                 throw new Exception("Something went wrong");
             }
         }
-        [Test, Property("Requirement", "CALC-1")]
+        [Test]
         public void GoogleTest()
         {
             // Open Google search engine.
