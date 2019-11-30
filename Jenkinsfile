@@ -18,7 +18,10 @@ pipeline {
         }
         stage('Execute All Tests'){
             steps{
-            bat 'E:/SS/ch-064/packages/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe  DEMO/bin/Debug/DEMO.dll'
+                echo "${env.WORKSPACE}"
+                
+                bat "\"${env.WORKSPACE}\\packages\\NUnit.ConsoleRunner.3.10.0\\tools\\nunit3-console.exe\"  DEMO/bin/Debug/DEMO.dll"
+                
             }
         }
     }
