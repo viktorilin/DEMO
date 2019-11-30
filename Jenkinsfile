@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Restore Nuget'){
             steps{
-            bat '${datas.nugetStore} restore DEMO.sln'
+            bat '"${datas.nugetStore}" restore "${datas.solution}"'
             }
         }
         stage('build'){
