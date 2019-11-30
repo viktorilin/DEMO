@@ -18,7 +18,7 @@ namespace DEMO
             string PATH = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
             string ACTUAL_PATH = PATH.Substring(0, PATH.LastIndexOf("bin"));
             string PROJECT_PATH = new Uri(ACTUAL_PATH).LocalPath;
-            string path = $@"{PROJECT_PATH}\TestResult.xml";
+            string path = $@"{PROJECT_PATH}TestResult.xml";
 
             // add files to upload (works with compatible verbs)
             request.AddFile("file", path);
