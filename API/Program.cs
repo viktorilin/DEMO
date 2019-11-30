@@ -23,7 +23,6 @@ namespace API
 
             string path = $@"{PROJECT_PATH}..\TestResult.xml";
 
-
             // add files to upload (works with compatible verbs)
             request.AddFile("file", path);
 
