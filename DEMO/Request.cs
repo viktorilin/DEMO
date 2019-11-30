@@ -1,5 +1,6 @@
 ﻿using RestSharp;
 using RestSharp.Authenticators;
+using System;
 using System.IO;
 using System.Net;
 
@@ -14,7 +15,10 @@ namespace DEMO
 
             var request = new RestRequest("/rest/raven/1.0/import/execution/nunit?projectKey=XRAYDEMO", Method.POST);
            
-            var path = @"E:\DEMO\DEMO\TestResult.xml";
+            string PATH = System.Reflection.Assembly.GetCallingAssembly().CodeBase;
+            string ACTUAL_PATH = PATH.Substring(0, PATH.LastIndexOf("bin"));
+            string PROJECT_PATH = new Uri(ACTUAL_PATH).LocalPath;
+            string path = $@"{PROJECT_PATH}\TestResult.xml";
 
             // add files to upload (works with compatible verbs)
             request.AddFile("file", path);
