@@ -3,6 +3,7 @@
 namespace DEMO
 {
     [TestFixture]
+    [Category("Calculator")]
     public class CalculatorTests
     {
         [Test, Property("Requirement", "CALC-1")]
