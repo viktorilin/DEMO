@@ -6,7 +6,6 @@ using OpenQA.Selenium.Chrome;
 namespace DEMO
 {
     [TestFixture]
-    [Category("Wdriver")]
     public class WdriverTest
     {
         private IWebDriver driver;
