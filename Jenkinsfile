@@ -34,7 +34,7 @@ pipeline {
     }
     post { 
         always { 
-            bat ''"${datas.postActionPath}"''
+            bat '"${datas.postActionPath}"'
         }
     }
 }
