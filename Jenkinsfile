@@ -34,7 +34,7 @@ pipeline {
     }
     post { 
         always { 
-            bat "\'${datas.postActionPath}\'"
+            bat '"API/bin/Debug/API.exe"'
         }
     }
 }
