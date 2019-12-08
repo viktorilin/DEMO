@@ -2,4 +2,4 @@ nugetStore: E:/SS/nuget.exe
 solution: DEMO.sln
 nunitPath: \\packages\\NUnit.ConsoleRunner.3.10.0\\tools\\nunit3-console.exe
 testDllPath: DEMO/bin/Debug/DEMO.dll
-postActionPath: API/bin/Debug/API.exe
+postActionPath: \\API\\bin\\Debug\\API.exe

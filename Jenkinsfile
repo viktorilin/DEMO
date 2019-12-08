@@ -34,7 +34,8 @@ pipeline {
     }
     post { 
         always { 
-            bat '"API/bin/Debug/API.exe"'
+            echo "\"${env.WORKSPACE}${datas.postActionPath}\""
+            bat "\"${env.WORKSPACE}${datas.postActionPath}\""
         }
     }
 }
