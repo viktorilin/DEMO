@@ -2,11 +2,6 @@ def datas
 pipeline {
     agent any
     stages {
-        stage('Git checkout'){
-            steps{
-            git branch: 'master', url: 'https://github.com/viktorilin/DEMO.git'
-            }
-        }
         stage('Initialize the variables') {
             steps{
                 script{
